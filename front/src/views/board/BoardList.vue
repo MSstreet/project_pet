@@ -84,7 +84,7 @@
 
 
     <nav aria-label="Page navigation example" v-if="paging.total_list_cnt > 0">
-    <span>
+    <span class="center">
       <ul class="pagination">
 
         <li class="page-item"><a class="page-link" href="javascript:;" @click="fnPage(1)">&lt;&lt;</a></li>
@@ -370,8 +370,8 @@ export default {
           this.no = this.paging.total_list_cnt - ((this.paging.page - 1) * this.paging.page_size)
         }
 
-        console.log(res.data.data);
-        console.log(res.data.pagination);
+        // console.log(res.data.data);
+        // console.log(res.data.pagination);
 
       }).catch((err) => {
         if (err.message.indexOf('Network Error') > -1) {
@@ -404,3 +404,4 @@ export default {
   }
 }
 </script>
+

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <div>
+    <div class="mt-10">
 
-      <h2>Please Log In</h2>
+<!--      <h2>Please Log In</h2>-->
 
-      <div id="loginForm">
+      <div id="loginForm" >
         <form @submit.prevent="fnLogin">
           <p>
             <input class="w3-input" name="uid" placeholder="Enter your ID" v-model="user_id"><br>
@@ -106,8 +106,10 @@ export default {
         let loginResult = await this.login({user_id: this.user_id, user_pw: this.user_pw})
 
 
-        if (loginResult) alert('로그인 결과 : ' + loginResult)
-
+        if (loginResult) {
+          this.goToPages()
+            // alert('로그인 결과 : ' + loginResult)
+        }
 
       } catch (err) {
         if (err.message.indexOf('Network Error') > -1) {
@@ -119,7 +121,8 @@ export default {
     },
     goToPages() {
       this.$router.push({
-        name: 'List'
+        // path: './write',
+        name: 'BoardList'
       })
     }
   },

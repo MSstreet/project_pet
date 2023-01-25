@@ -1,26 +1,23 @@
-package com.msproject.pet.entity;
+package com.msproject.pet.web.dtos;
 
-import lombok.*;
-
-import javax.persistence.*;
-import java.math.BigDecimal;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-@Builder
-@NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class PetHospitalEntity {
+@NoArgsConstructor
+@Builder
+public class PetHospitalDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long hospitalId;
 
     private String sigunName;
 
     private String hospitalName;
 
-   // private String operationYn;
+    // private String operationYn;
 
     private String hospitalNum;
 

@@ -34,6 +34,7 @@ public class JwtUtil {
             JWTVerifier verifier = JWT.require(algorithm)
                     .withIssuer("vue-board")
                     .build();
+
             return verifier.verify(token);
 
         } catch (JWTVerificationException e) {

@@ -27,17 +27,7 @@ public class QPetHospitalEntity extends EntityPathBase<PetHospitalEntity> {
 
     public final StringPath hospitalNum = createString("hospitalNum");
 
-    public final StringPath hospitalStreetAddr = createString("hospitalStreetAddr");
-
-    public final StringPath hospitalStreetZip = createString("hospitalStreetZip");
-
-    public final StringPath hospitalZip = createString("hospitalZip");
-
-    public final NumberPath<java.math.BigDecimal> latitude = createNumber("latitude", java.math.BigDecimal.class);
-
-    public final NumberPath<java.math.BigDecimal> longitude = createNumber("longitude", java.math.BigDecimal.class);
-
-    public final StringPath operationYn = createString("operationYn");
+    public final NumberPath<Float> hospitalScore = createNumber("hospitalScore", Float.class);
 
     public final StringPath sigunName = createString("sigunName");
 

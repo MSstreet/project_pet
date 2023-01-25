@@ -26,9 +26,12 @@ public class TokenRequestFilter extends OncePerRequestFilter {
     private final UserService userService;
     private final JwtUtil jwtUtil;
 
+//"/user/login"
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
+
             if ("/user/login".equals(request.getRequestURI())) {
                 doFilter(request, response, filterChain);
             } else {
