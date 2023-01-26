@@ -4,10 +4,12 @@ import BoardList from '@/views/board/BoardList.vue'
 import BoardDetail from '@/views/board/BoardDetail.vue'
 import BoardWrite from '@/views/board/BoardWrite.vue'
 import Login from "@/views/common/Login"
+import Join from "@/views/common/Join"
 
 // import {store} from "@/vuex/store";
 
 import store from "@/vuex/store";
+
 
 const requireAuth = () => (from, to, next) => {
 
@@ -25,6 +27,11 @@ const routes = [
         path: '/',
         name: 'PageHome',
         component: PageHome
+     },
+    {
+        path: '/join',
+        name: 'Join',
+        component: Join //회원가입 컴포넌트 추가
     },
     {
         path: '/login',

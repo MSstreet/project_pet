@@ -77,6 +77,7 @@ public class BoardService {
 
         Page<BoardEntity> boardEntities = boardRepositoryCustom.findAllBySearchCondition(pageable, searchCondition);
         for (BoardEntity entity : boardEntities) {
+
             BoardDto dto = BoardDto.builder()
                     .idx(entity.getIdx())
                     .author(entity.getAuthor())
@@ -107,6 +108,7 @@ public class BoardService {
      */
     public BoardDto getBoard(Long id) {
         BoardEntity entity = boardRepository.findById(id).orElseThrow(() -> new RuntimeException("게시글을 찾을 수 없습니다."));
+
         return BoardDto.builder()
                 .idx(entity.getIdx())
                 .title(entity.getTitle())
@@ -120,7 +122,8 @@ public class BoardService {
      * 게시글 등록
      */
     public BoardEntity create(BoardDto boardDto) {
-        BoardEntity entity = BoardEntity.builder()
+
+       BoardEntity entity = BoardEntity.builder()
                 .title(boardDto.getTitle())
                 .contents(boardDto.getContents())
                 .author(boardDto.getAuthor())

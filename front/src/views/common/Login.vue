@@ -1,28 +1,49 @@
 <template>
-  <div>
+  <section class="bg-light">
     <div class="mt-10">
 
 <!--      <h2>Please Log In</h2>-->
 
-      <div id="loginForm" >
+      <div class="container py-4">
+
+<!--        <div class="row align-items-center justify-content-between">-->
+<!--          <a class="navbar-brand h1 text-center" href="index.do">-->
+<!--            <span class="text-dark h4">도시</span> <span class="text-primary h4">거북</span>-->
+<!--          </a>-->
+<!--        </div>-->
+
         <form @submit.prevent="fnLogin">
-          <p>
-            <input class="w3-input" name="uid" placeholder="Enter your ID" v-model="user_id"><br>
-          </p>
 
-          <p>
-            <input name="password" class="w3-input" placeholder="Enter your password" v-model="user_pw" type="password">
-          </p>
+          <div class="form-group">
+            <label for="exampleInputEmail1" class="mb-1">Email</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter email" v-model="user_id">
 
-          <p>
-            <button type="submit" class="w3-button w3-green w3-round">Login</button>
-          </p>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputPassword1" class="mb-1 mt-4">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  v-model="user_pw">
+          </div>
+
+          <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-primary mt-3">Login</button>
+          </div>
+
+<!--          <p>-->
+<!--            <input class="w3-input" name="uid" placeholder="Enter your ID" v-model="user_id"><br>-->
+<!--          </p>-->
+
+<!--          <p>-->
+<!--            <input name="password" class="w3-input" placeholder="Enter your password" v-model="user_pw" type="password">-->
+<!--          </p>-->
 
         </form>
       </div>
 
     </div>
-  </div>
+  </section>
 </template>
 
 <!--<script>-->
@@ -140,5 +161,17 @@ export default {
 #loginForm {
   width: 500px;
   margin: auto;
+
+}
+
+.bg-light{
+  height: 1053px;
+  padding-top:55px;
+  padding-bottom:75px;
+}
+
+.container.py-4{
+  margin: 0 auto;
+  width : 503px;
 }
 </style>

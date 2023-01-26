@@ -55,9 +55,10 @@ class UserRepositoryTest {
     @DisplayName("1. 유저 데이터 생성하기")
     @Test
     void test_1(){
-        String encPassword = passwordEncoder.encode("test_password");
+        String encPassword = passwordEncoder.encode("qwer1234");
+
         UserEntity userEntity = UserEntity.builder()
-                .userId("test_user")
+                .userId("test_user1")
                 .userPw(encPassword)
                 .userName("테스트유저")
                 .build();

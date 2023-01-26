@@ -1,7 +1,9 @@
 package com.msproject.pet.web;
 
+import com.msproject.pet.entity.UserEntity;
 import com.msproject.pet.service.UserService;
 import com.msproject.pet.util.JwtUtil;
+import com.msproject.pet.web.dtos.UserDto;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +11,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -24,6 +29,17 @@ public class UserController {
     private final JwtUtil jwtUtil;
     private final UserService userService;
     private final AuthenticationManager authenticationManager;
+
+    private final PasswordEncoder passwordEncoder;
+
+    @PostMapping("/join")
+    public Long saveUser(@RequestBody @Valid UserDto userDto) throws Exception {
+
+        UserEntity user = userService.saveUser(userDto);
+
+        return  user.getIdx();
+    }
+
 
     @PostMapping("/login")
     public ResponseEntity<Map<String, Object>> login(@RequestBody Map<String, String> paramMap) {

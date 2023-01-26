@@ -43,10 +43,12 @@
           <tbody>
 
           <tr v-for="(row, idx) in list" :key="idx">
+
             <td>{{ row.idx }}</td>
             <td><a v-on:click="fnView(`${row.idx}`)">{{ row.title }}</a></td>
             <td>{{ row.author }}</td>
             <td>{{ row.created_at }}</td>
+
           </tr>
           </tbody>
         </table>
@@ -79,8 +81,6 @@
 <!--        </tr>-->
 <!--        </tbody>-->
 <!--      </table>-->
-
-
 
 
     <nav aria-label="Page navigation example" v-if="paging.total_list_cnt > 0">

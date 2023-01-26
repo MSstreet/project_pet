@@ -8,6 +8,11 @@ spring:
     username: root
     password: lms*!$Ms0828
 
+#  application:
+#    name: user-service
+#  main:
+#    allow-circular-references: true
+
   jpa:
     hibernate:
       ddl-auto: update
